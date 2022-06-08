@@ -1,0 +1,430 @@
+<html style="--whitebusterR:255; --whitebusterG:250; --whitebusterB:250;" class="whiteBuster "><head><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+    
+    <style type="text/css">
+        body {
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+            font-weight:300;
+            font-size:18;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1100px;
+        }
+        td { 
+            font-size:20;
+        }
+
+/*
+        h1 {
+            font-weight:300;
+        }
+        */
+        
+        .disclaimerbox {
+            background-color: #eee;		
+            border: 1px solid #eeeeee;
+            border-radius: 10px ;
+            -moz-border-radius: 10px ;
+            -webkit-border-radius: 10px ;
+            padding: 20px;
+        }
+    
+        video.header-vid {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px ;
+            -moz-border-radius: 10px ;
+            -webkit-border-radius: 10px ;
+        }
+        
+        img.header-img {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px ;
+            -moz-border-radius: 10px ;
+            -webkit-border-radius: 10px ;
+        }
+        
+        img.rounded {
+            border: 1px solid #eeeeee;
+            border-radius: 10px ;
+            -moz-border-radius: 10px ;
+            -webkit-border-radius: 10px ;
+        }
+
+        a
+        {
+        color: #1367a7;
+        text-decoration: none;
+        }
+
+        
+        a:link,a:visited
+        {
+            color: #1367a7;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #208799;
+            cursor: pointer;
+        }
+        
+        td.dl-link {
+            height: 160px;
+            text-align: center;
+            font-size: 22px;
+        }
+        
+        .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                    0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                    5px 5px 0 0px #fff, /* The second layer */
+                    5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                    10px 10px 0 0px #fff, /* The third layer */
+                    10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                    15px 15px 0 0px #fff, /* The fourth layer */
+                    15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                    20px 20px 0 0px #fff, /* The fifth layer */
+                    20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                    25px 25px 0 0px #fff, /* The fifth layer */
+                    25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+    
+        .paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                    0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+    
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+    
+    
+        .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                    0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                    5px 5px 0 0px #fff, /* The second layer */
+                    5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                    10px 10px 0 0px #fff, /* The third layer */
+                    10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 30px;
+            margin-bottom: 5px;
+        }
+        
+        .vert-cent {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        hr
+        {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+
+
+        tr.border_bottom_toprule td {
+          border-top: 2px solid black;
+        }
+
+        tr.border_bottom_bottomrule td {
+          border-bottom: 2px solid black;
+        }
+
+        tr.border_bottom_midrule td {
+          border-bottom: 1px solid black;
+        }
+
+        p { 
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+    </style>
+    
+
+<!--
+https://arxiv.org/abs/2006.13256 - Rescaling
+https://arxiv.org/abs/1804.02748 - Scaling
+
+
+
+-->
+
+<title>EPIC-KITCHENS-VISOR Benchmark: VIdeo Segmentations and Object Relations</title>
+</head>
+    
+<body>
+<br>
+<center>
+<h1>EPIC-KITCHENS-VISOR Benchmark<br/>VIdeo Segmentations and Object Relations</h1>
+<!-- <span style="font-size:42px">EPIC-KITCHENS-100<br/>Instance Segmentations<br/><br/></span> -->
+
+
+<span style='font-size:14pt'>
+Ahmad Darkhalil*<sup>1</sup>, Dandan Shan*<sup>2</sup>, Bin Zhu*<sup>1</sup>, Jian Ma*<sup>1</sup><br/>
+Amlan Kar<sup>3</sup>, Richard E. L. Higgins<sup>2</sup>, Sanja Fidler<sup>3</sup>, David F. Fouhey<sup>2</sup>, Dima Damen<sup>1</sup><br/>
+<br/>
+
+<sup>1</sup> University of Bristol, UK &nbsp; 
+<sup>2</sup> University of Michigan, US &nbsp; 
+<sup>3</sup> University of Toronto, CA &nbsp; 
+* Co-First Authors
+</span>
+</center>
+    
+<br>
+
+<script>
+var sampleImages = ['Segmented-Key-Frames/check_knob/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/close_garlic_presser/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/close_toaster/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/get_maple_syrup/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/get_meat_mix_from_pan/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/insert_plug_into_lid/frame_0000000002_overlay.jpg', 'Segmented-Key-Frames/pick_up_balloon/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/pick_up_cake_pan/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/pick_up_gin/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/pick_up_pak_choi/frame_0000000002_overlay.jpg', 'Segmented-Key-Frames/pick_up_salt_container/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/pick_up_spatula/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/pick_up_straw/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/pick_up_teapot/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/place_coriander_in_pan/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/place_packet_on_table/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/pour_oats_into_glass/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/put_apples_down/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/put_cap_into_bin/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_cheese_on_fridge/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_down_pillows/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/put_food_on_countertop/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/put_grater/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/put_in_plastic_bag_in_freezer/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/put_jar_in_cupboard/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_pitta_into_toaster/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_salami_piece_on_pizza/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_sellotape_in_drawer/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/rinse_masher/frame_0000000002_overlay.jpg', 'Segmented-Key-Frames/scrape_gherkins_with_knife/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/set_sous_vide_machine/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/spoon_chilli_onto_plate/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/take_ice_cube/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/take_noodles_out/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/take_out_filter/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/take_squash/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/to_put_potato_in_the_frying_pan/frame_0000000002_overlay.jpg', 'Segmented-Key-Frames/weigh_the_nut_paste/frame_0000000003_overlay.jpg'];
+var currentSample = 1;
+
+function updateSample(){
+    document.getElementById('sample').src = sampleImages[currentSample];
+    document.getElementById('sampleLink').href = sampleImages[currentSample];
+    currentSample = (currentSample + 1) % sampleImages.length; 
+    setTimeout("updateSample()",2000);
+}
+</script>
+
+
+<!-- 
+<table align="center" width="850px">
+<tbody><tr>
+<td width="400px"><center>
+<a href="Segmented-Key-Frames/close_garlic_presser/frame_0000000004_overlay.jpg" id='sampleLink'><img style='border:2px solid black;' src="Segmented-Key-Frames/close_garlic_presser/frame_0000000004_overlay.jpg" id='sample' height="300px"></a><br>
+</center></td>
+</tr>
+<tr><td align="center" width="400px"> 
+<center><span style="font-size:125%"> 
+Sample proof of concept annotatations 
+</span></center>
+</td></tr></tbody></table>    
+-->
+
+<br/>
+    
+<!-- <center><h1>Introduction</h1></center> -->
+<table align="center" width="850px"><tbody><tr><td>
+<p>
+We introduce VISOR, a new dataset of  pixel annotations and a benchmark suite for segmenting hands and active objects in egocentric video.
+VISOR annotates videos from EPIC-KITCHENS, which comes with a new set of challenges not encountered in current video segmentation datasets. Specifically, we need to ensure both short- and long-term consistency of pixel-level annotations as objects undergo transformative interactions, e.g. an onion is peeled, diced and cooked - where we aim to obtain accurate pixel-level annotations of the peel, onion pieces, chopping board, knife, pan, as well as the acting hands.
+VISOR introduces an annotation pipeline, AI-empowered in parts, for scalability and quality.
+In total, we publicly release 271K manual semantic masks of 255 object classes, 7M interpolated dense masks, 67K hand-object relations, covering 36 hours of 179 untrimmed videos.
+Along with the annotations, we introduce three challenges in video object segmentation, interaction understanding and long-term reasoning.
+</p>
+</td></tr></tbody></table>
+
+<br><br><hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+<center><h1>VISOR Annotations and Challenges</h1>
+
+
+<table align="center" width="850px"><tbody><tr><td>
+<p style='text-align:center'>
+Our VISOR challenge introduces a large set of new annotations
+on the EPIC-KITCHENS dataset as well as a set of new
+challenges based on these annotations.
+</p></td></tr></table>
+
+
+<table>
+<tr>
+<td align='center'><b>Sparse Annotations</b></td>
+<td></td>
+<td align='center'><b>Dense annotations</b></td>
+</tr>
+<tr><td><img src='images/sparse.jpg' width=300></td><td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td><img src='images/dense.jpg' width=300></td></tr>
+<tr>
+<td align='center'>
+271K masks covering<br/>36 hours of untrimmed video
+</td><td></td>
+<td align='center'>
+14.9M high quality<br/>
+automatic interpolations
+</td></tr>
+</table>
+<br/>
+
+<br/><br/>
+
+<table align="center" width="850px"><tbody><tr><td>
+<p style='text-align:center'>
+We introduce three new benchmarks that use these annotations, with baselines
+and metrics.
+</p></td></tr></table>
+<br/>
+
+<table>
+<tr>
+<td align='center'><b>Video Object Segmentation</b></td>
+<td></td>
+<td align='center'><b>Hand Object Segmentation</b></td>
+<td></td>
+<td align='center'><b>Where Did This Come From?</b></td>
+</tr> 
+<tr>
+<td align='center'><img src='images/c1.png' height=120></td>
+<td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
+<td align='center'><img src='images/c2.png' height=120></td>
+<td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
+<td align='center'><img src='images/c3.png' height=120></td>
+</tr><tr>
+<td align='center'>
+<b>Goal:</b> Track segments through video
+and occlusion
+</td>
+<td></td>
+<td align='center'>
+<b>Goal:</b> Identify contact with 67K
+in-hand object masks
+</td>
+<td></td>
+<td align='center'>
+<b>Goal:</b>Name and point to where things
+came from with 222 test cases
+</td>
+</tr>
+</table>
+<br/><br/>
+
+<table align="center" width="850px"><tbody><tr><td>
+<p style='text-align:center'>
+Video data is best viewed as a video. These annotations
+can be seen in the below trailer:
+</p>
+</td></tr></tbody></table>
+
+<iframe width=800 height=500 src="https://www.youtube.com/embed/jnKQwsWsdxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> 
+
+
+</center>
+
+
+<br><br><hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+    
+
+<center><h1>Base Dataset and Annotations</h1></center>
+<table align="center" width="850px"><tbody><tr><td>
+<p>
+<a href='http://epic-kitchens.github.io'>EPIC-KITCHENS-100</a>
+has been collected in 45 different kitchens, across 4 countries, focusing on
+long-term object interactions. Each participant captured all kitchen-based
+object interactions for at least 3 consecutive days. Footage shows the
+continuous recording of interactions throughout storage, food prep, cooking and
+serving.  Current annotations label the start and end action segments of all
+interactions, e.g. pick-up egg, put-down egg, pick-up egg, crack egg, mix eggs,
+pour egg mixture, stir eggs, serve eggs. In total, 90K action segments are
+labelled in the train/val/test splits of the EPIC-KITCHENS-100 dataset.
+Details of the dataset are available in the
+<a href='https://arxiv.org/abs/1804.02748'>first (ECCVC2018)</a> and
+<a href='https://arxiv.org/abs/2006.13256'>second (ArXiv)</a>
+papers and can be seen in the below video:
+</p>
+
+<center>
+<!-- <h3>Explore the dataset with a video</h3> -->
+<iframe width=800 height=500 src="https://www.youtube.com/embed/LygrI_MuI-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> 
+<!-- <a href='media/q1zoom_compat.mp4'><img src='media/q1zoom_compat.mp4.jpg' width=675 style='border:2px solid black;'></a> --> 
+<br/><br/>
+
+<!-- 
+<h2>Explore the dataset interactively</h2>
+Mouseover and see some of what people are doing in EPIC-KITCHENS!
+As you move your mouse over the image, we'll show an image from
+the EPIC-KITCHENS dataset. You can select a particular subset
+too. 
+<br/><br/>
+<script>
+var colorActive = '#aaf'; var colorInactive = '#ddd';
+</script>
+<div style='align:center;display:inline' id='dselectors'></div><br/><br/>
+<canvas id='visualizer' width=675 height=375 style='border:2px solid black;'></canvas><br/>
+<script>
+var gridBinShow = new Array(); var gridHandSets = new Array(); var gridHandSetNames = new Array(); </script>
+<script src='locdata.js'></script>
+<script src='locationDriver.js'></script>
+-->
+
+</center>
+</td></tr></tbody></table>
+
+
+<br><br><hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+
+<center><h1>Annotation Interface</h1></center>
+<table align="center" width="850px"><tbody><tr><td>
+</td></tr></tbody></table>
+
+<table align="center" width="850px"><tbody><tr><td>
+<p>
+This effort has been powered by the 
+<a href='http://aidemos.cs.toronto.edu/annotation-suite/'>Toronto annotation suite</a>.
+Here, we show a user using the system to annotate a scene with multiple objects
+involved in the interaction.
+Note the use of AI-guided refinement techniques that greatly speed up the
+process (e.g. <a href="https://arxiv.org/abs/1903.06874">CVPR 2019 paper</a>).
+</p>
+<center>
+<!-- <video src='media/Epic-Interface-Video2.mp4' width=800 controls></video> -->
+<iframe width=800 height=500 src="https://www.youtube.com/embed/-RTeEE8Nhhc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> 
+<!-- <iframe width=800 height=500 src="https://www.youtube.com/embed/b3IqxeozEXE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
+<br/><br/>(a more general demo is on <a href='https://www.youtube.com/watch?v=b3IqxeozEXE'>YouTube</a>)
+</center>
+</td></tr></tbody></table>
+
+
+<br><br><hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+
+<center><h2>Acknowledgments</h2></center>
+<table align="center" width="850px"><tbody><tr><td>
+<p>
+We gratefully acknowledge the following colleagues for valuable support of our
+project: Michael Wray for revising the classes for EPIC-KITCHENS-100 with new
+open-vocab words; Seung Wook Kim and Marko Boben for technical support to
+TORAS; Srdjan Delic for additional quality checks; several members of the
+Machine Learning and Computer Vision (MaVi) group at Bristol for quality
+checking: Toby Perrett, Michael Wray, Dena Bazazian, Adriano Fragomeni, Kevin
+Flanagan, Daniel Whettam, Alexandros Stergiou, Jacob Chalk and Zhifan Zhu.
+</p>
+
+<p>
+Segmentation annotations were funded by charitable unrestricted donation from
+Procter and Gamble as well as charitable unrestricted donation from DeepMind.
+</p>
+
+<p>
+Research at the University of Bristol is supported by UKRI Engineering and
+Physical Sciences Research Council (EPSRC) Doctoral Training Program (DTP),
+EPSRC Fellowship UMPIRE (EP/T004991/1) and EPSRC Program Grant Visual
+AI (EP/T028572/1).
+</p>
+
+<p>
+Research at the University of Michigan is based upon work
+supported by the National Science Foundation under Grant No. 2006619.
+</p>
+
+<p>
+This webpage template was originally made by <a href="https://richzhang.github.io/colorization/">Richard Zhang</a>
+</p>
+
+
+</td></tr></tbody></table>
+
+<script>
+function doSetups(){ 
+    setupHandMove()
+    setTimeout('updateSample()',200);
+}
+window.onload = doSetups;
+</script>
+
+</body></html>
