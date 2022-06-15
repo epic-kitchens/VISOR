@@ -1,430 +1,432 @@
-<html style="--whitebusterR:255; --whitebusterG:250; --whitebusterB:250;" class="whiteBuster "><head><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="http://www.google.com/jsapi" type="text/javascript"></script> 
-    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
-    
-    <style type="text/css">
-        body {
-            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-            font-weight:300;
-            font-size:18;
-            margin-left: auto;
-            margin-right: auto;
-            width: 1100px;
-        }
-        td { 
-            font-size:20;
-        }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-/*
-        h1 {
-            font-weight:300;
-        }
-        */
-        
-        .disclaimerbox {
-            background-color: #eee;		
-            border: 1px solid #eeeeee;
-            border-radius: 10px ;
-            -moz-border-radius: 10px ;
-            -webkit-border-radius: 10px ;
-            padding: 20px;
-        }
-    
-        video.header-vid {
-            height: 140px;
-            border: 1px solid black;
-            border-radius: 10px ;
-            -moz-border-radius: 10px ;
-            -webkit-border-radius: 10px ;
-        }
-        
-        img.header-img {
-            height: 140px;
-            border: 1px solid black;
-            border-radius: 10px ;
-            -moz-border-radius: 10px ;
-            -webkit-border-radius: 10px ;
-        }
-        
-        img.rounded {
-            border: 1px solid #eeeeee;
-            border-radius: 10px ;
-            -moz-border-radius: 10px ;
-            -webkit-border-radius: 10px ;
-        }
+    <title>EPIC-KITCHENS Dataset</title>
 
-        a
-        {
-        color: #1367a7;
-        text-decoration: none;
-        }
-
-        
-        a:link,a:visited
-        {
-            color: #1367a7;
-            text-decoration: none;
-        }
-        a:hover {
-            color: #208799;
-            cursor: pointer;
-        }
-        
-        td.dl-link {
-            height: 160px;
-            text-align: center;
-            font-size: 22px;
-        }
-        
-        .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-            box-shadow:
-                    0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-                    5px 5px 0 0px #fff, /* The second layer */
-                    5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-                    10px 10px 0 0px #fff, /* The third layer */
-                    10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-                    15px 15px 0 0px #fff, /* The fourth layer */
-                    15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-                    20px 20px 0 0px #fff, /* The fifth layer */
-                    20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-                    25px 25px 0 0px #fff, /* The fifth layer */
-                    25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
-            margin-left: 10px;
-            margin-right: 45px;
-        }
-    
-        .paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-            box-shadow:
-                    0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
-    
-            margin-left: 10px;
-            margin-right: 45px;
-        }
-    
-    
-        .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-            box-shadow:
-                    0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-                    5px 5px 0 0px #fff, /* The second layer */
-                    5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-                    10px 10px 0 0px #fff, /* The third layer */
-                    10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
-            margin-top: 5px;
-            margin-left: 10px;
-            margin-right: 30px;
-            margin-bottom: 5px;
-        }
-        
-        .vert-cent {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        hr
-        {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-        }
-
-
-        tr.border_bottom_toprule td {
-          border-top: 2px solid black;
-        }
-
-        tr.border_bottom_bottomrule td {
-          border-bottom: 2px solid black;
-        }
-
-        tr.border_bottom_midrule td {
-          border-bottom: 1px solid black;
-        }
-
-        p { 
-            text-align: justify;
-            text-justify: inter-word;
-        }
-
-    </style>
-    
-
-<!--
-https://arxiv.org/abs/2006.13256 - Rescaling
-https://arxiv.org/abs/1804.02748 - Scaling
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Kaushan+Script|Droid+Serif:400,700,400italic,700italic|Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 
 
 
--->
-
-<title>EPIC-KITCHENS-VISOR Benchmark: VIdeo Segmentations and Object Relations</title>
-</head>
-    
-<body>
-<br>
-<center>
-<h1>EPIC-KITCHENS-VISOR Benchmark<br/>VIdeo Segmentations and Object Relations</h1>
-<!-- <span style="font-size:42px">EPIC-KITCHENS-100<br/>Instance Segmentations<br/><br/></span> -->
+    <!-- Custom styles for this template -->
+    <link href="static/css/agency.css" rel="stylesheet">
 
 
-<span style='font-size:14pt'>
-Ahmad Darkhalil*<sup>1</sup>, Dandan Shan*<sup>2</sup>, Bin Zhu*<sup>1</sup>, Jian Ma*<sup>1</sup><br/>
-Amlan Kar<sup>3</sup>, Richard E. L. Higgins<sup>2</sup>, Sanja Fidler<sup>3</sup>, David F. Fouhey<sup>2</sup>, Dima Damen<sup>1</sup><br/>
-<br/>
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img style="width:10em;" src="static/img/logo/epic-kitchens-logo-red-side.svg" alt="Logo"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#trailer">Trailer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#stats">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#downloads">Downloads</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<sup>1</sup> University of Bristol, UK &nbsp; 
-<sup>2</sup> University of Michigan, US &nbsp; 
-<sup>3</sup> University of Toronto, CA &nbsp; 
-* Co-First Authors
-</span>
-</center>
-    
-<br>
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+        </div>
+      </div>
+    </header>
 
-<script>
-var sampleImages = ['Segmented-Key-Frames/check_knob/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/close_garlic_presser/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/close_toaster/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/get_maple_syrup/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/get_meat_mix_from_pan/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/insert_plug_into_lid/frame_0000000002_overlay.jpg', 'Segmented-Key-Frames/pick_up_balloon/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/pick_up_cake_pan/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/pick_up_gin/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/pick_up_pak_choi/frame_0000000002_overlay.jpg', 'Segmented-Key-Frames/pick_up_salt_container/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/pick_up_spatula/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/pick_up_straw/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/pick_up_teapot/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/place_coriander_in_pan/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/place_packet_on_table/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/pour_oats_into_glass/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/put_apples_down/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/put_cap_into_bin/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_cheese_on_fridge/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_down_pillows/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/put_food_on_countertop/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/put_grater/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/put_in_plastic_bag_in_freezer/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/put_jar_in_cupboard/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_pitta_into_toaster/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_salami_piece_on_pizza/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/put_sellotape_in_drawer/frame_0000000001_overlay.jpg', 'Segmented-Key-Frames/rinse_masher/frame_0000000002_overlay.jpg', 'Segmented-Key-Frames/scrape_gherkins_with_knife/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/set_sous_vide_machine/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/spoon_chilli_onto_plate/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/take_ice_cube/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/take_noodles_out/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/take_out_filter/frame_0000000004_overlay.jpg', 'Segmented-Key-Frames/take_squash/frame_0000000003_overlay.jpg', 'Segmented-Key-Frames/to_put_potato_in_the_frying_pan/frame_0000000002_overlay.jpg', 'Segmented-Key-Frames/weigh_the_nut_paste/frame_0000000003_overlay.jpg'];
-var currentSample = 1;
+    <!-- About -->
+<section class="bg-light" id="about">
+  <div class="container">
 
-function updateSample(){
-    document.getElementById('sample').src = sampleImages[currentSample];
-    document.getElementById('sampleLink').href = sampleImages[currentSample];
-    currentSample = (currentSample + 1) % sampleImages.length; 
-    setTimeout("updateSample()",2000);
+
+    <div class="row">
+      <div class="col" align='center'>
+        <h2 class="service-heading">EPIC-KITCHENS VISOR</h2>
+
+        <p>
+        We are proud to announce the EPIC-KITCHENS VISOR, a new dataset of
+        pixel annotations and a benchmark suite for segmenting hands and active
+        objects in egocentric video.  VISOR annotates videos from
+        EPIC-KITCHENS, which comes with a new set of challenges not encountered
+        in current video segmentation datasets. Specifically, we need to ensure
+        both short- and long-term consistency of pixel-level annotations as
+        objects undergo transformative interactions, e.g. an onion is peeled,
+        diced and cooked - where we aim to obtain accurate pixel-level
+        annotations of the peel, onion pieces, chopping board, knife, pan, as
+        well as the acting hands. VISOR introduces an annotation pipeline,
+        AI-powered in parts, for scalability and quality, and introduces:
+        </p>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col" align='center'>
+        <h4 class="service-heading">Sparse Annotations</h4>
+        <img src='static/img/sparse.jpg' style='width:70%'>
+        <p>271K masks covering 36 hours of untrimmed video</p>
+      </div>
+      <div class="col" align='center'>
+        <h4 class="service-heading">Dense Annotations</h4>
+        <img src='static/img/dense.jpg' style='width:70%'>
+        <p>14.9M high quality automatic interpolations</p>
+    </div>
+
+    <div class="row">
+      <div class="col" align='center'>
+        <h4 class="service-heading">Video Object Segmentation</h4>
+        <p><b>Goal:</b> Track segments through video and occlusion</p>
+        <img src='static/img/c1.png' style='width:100%'>
+      </div>
+      <div class="col" align='center'>
+        <h4 class="service-heading">Hand Object Segmentation</h4>
+        <p><b>Goal:</b>  Identify contact with 67K in-hand object masks	</p> 
+        <img src='static/img/c2.png' style='width:100%'>
+    </div>
+      <div class="col" align='center'>
+        <h4 class="service-heading">Where Did This Come From?</h4>
+        <p><b>Goal:</b> Name and point to where things came from with 222 test cases</p>
+        <img src='static/img/c3.png' style='width:100%'>
+    </div>
+       
+
+  </div>
+</section>
+
+
+<section id="trailer">
+  <div class="container">
+    <div class="row text-center">
+    <div class="col text-center">
+        <h2 class="section-heading text-uppercase">Watch the Trailer</h2>
+        <h3 class="section-subheading text-muted">The full data is coming by August 1, 2022, but in the meantime, please watch our data!</h3>
+    </div>
+  </div>
+  <div class="Container">
+    <div class="row align-items-center">
+      <div class="col text-center">
+        <iframe width=800 height=500 src="https://www.youtube.com/embed/jnKQwsWsdxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> 
+     </div>
+     </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section id="stats" class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Explore EPIC-KITCHENS VISOR</h2>
+        <h3 class="section-subheading text-muted">To get a sense of the data, feel free to explore some of the data in VISOR!</h3>
+      </div>
+    </div>
+  </div>
+<!-- Segments -->
+
+<script type='text/javascript' src='segmentwidget.js'></script>
+<script type='text/javascript' src='static/all_spans.js'></script>
+
+<div class="container">
+   <div class="row align-items-center">
+     <div class="col-lg-12 text-center">
+        <h4 class="section-heading text-uppercase">Watch a Segment</h4>
+        <p>
+        You can click through and see the annotations for a full sequence. We show the image on the left, the annotations on the right, and the legend for the annotation below.
+        </p>
+     </div>
+  </div>
+   <div class="row align-items-center">
+        <div class="col-lg-1 col-md-1 mb-1"> <input type="button" style="cursor:pointer;border:1px solid white;padding:0px 20px 0px 20px;" onclick="adjustBN(-1)" value="<<"> </div>
+        <div class="col-lg-5 col-md-5 mb-4">
+	        <center>Image</center>
+            <img id="widgetimage" src="https://epicwidget.s3.amazonaws.com/P22_107/P22_107_frame_0000000213.jpg"	class="img-fluid mb-4" alt="">
+        </div>
+        <div class="col-lg-5 col-md-5 mb-4">
+            <center>Annotation</center>
+            <img id="widgetanno" src="https://epicwidget.s3.amazonaws.com/P22_107/segmentations/P22_107_frame_0000000213.png" class="img-fluid mb-4" alt="">
+        </div>
+        <div class="col-lg-1 col-md-1 mb-1"> <input type="button" style="cursor:pointer;border:1px solid white;padding:0px 20px 0px 20px;" onclick="adjustBN(1)" value=">>"> </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col text-center" id='legend'>
+								<span style='background-color:#a08000;border:1px solid black'> &nbsp; &nbsp; &nbsp; &nbsp; </span> &nbsp; drawer &nbsp;<span style='background-color:#a0c0c0;border:1px solid black'> &nbsp; &nbsp; &nbsp; &nbsp; </span> &nbsp; left hand &nbsp;<span style='background-color:#006040;border:1px solid black'> &nbsp; &nbsp; &nbsp; &nbsp; </span> &nbsp; right hand &nbsp;
+        </div>
+    </div>
+</div>
+
+  <div class="container"><div class="row"><div class="col"><br/><br/><br/><br/></div></div></div>
+
+  <div class="container">
+    <div class="row">
+     <div class="col-lg-12 text-center">
+        <h4 class="section-heading text-uppercase">See Our Dense Annotations</h4>
+        <p>
+        Part of VISOR is a new collection of 14.9M new masks that are interpolated between our sparse annotation.<br/>
+        <b>Click</b> on
+        any of the images below to see some clips of new dense annotations.
+        </p>
+     </div>        
+    </div>
+
+    <script>
+    function updateVid(i){
+        document.getElementById('vid'+i).innerHTML = "<video width='100%' controls autoplay=true loop><source src='video/cut_"+i+".webm' type='video/webm'></video>";
+    }
+    </script>
+
+<style>
+.imagemouseover{
+    -webkit-filter: brightness(100%);
+    -moz-filter: brightness(100%);
+    -o-filter: brightness(100%);
+    -ms-filter: brightness(100%);
+    filter: brightness(100%);
 }
-</script>
+.imagemouseover:hover{
+    -webkit-filter: brightness(70%);
+	-moz-filter: brightness(70%);
+	-o-filter: brightness(70%);
+	-ms-filter: brightness(70%);
+	filter: brightness(70%);
+}
+</style>
+    <div class="row justify-content-center">
+      <div class="col" align='center' id='vid0' onclick="updateVid(0)"> <img src='video/cut_0.jpg' width="100%" class='imagemouseover'> </div>
+      <div class="col" align='center' id='vid1' onclick="updateVid(1)"> <img src='video/cut_1.jpg' width="100%" class='imagemouseover'> </div>
+    </div>
+    <div class="row"><div class='col'><br/></div></div>
+    <div class="row justify-content-center">
+      <div class="col" align='center' id='vid2' onclick="updateVid(2)"> <img src='video/cut_2.jpg' width="100%" class='imagemouseover'> </div>
+      <div class="col" align='center' id='vid3' onclick="updateVid(3)"> <img src='video/cut_3.jpg' width="100%" class='imagemouseover'> </div>
+    </div>
+  </div>
+
+  <div class="container"><div class="row"><div class="col"><br/><br/><br/><br/><br/><br/></div></div></div>
 
 
-<!-- 
-<table align="center" width="850px">
-<tbody><tr>
-<td width="400px"><center>
-<a href="Segmented-Key-Frames/close_garlic_presser/frame_0000000004_overlay.jpg" id='sampleLink'><img style='border:2px solid black;' src="Segmented-Key-Frames/close_garlic_presser/frame_0000000004_overlay.jpg" id='sample' height="300px"></a><br>
-</center></td>
-</tr>
-<tr><td align="center" width="400px"> 
-<center><span style="font-size:125%"> 
-Sample proof of concept annotatations 
-</span></center>
-</td></tr></tbody></table>    
--->
-
-<br/>
-    
-<!-- <center><h1>Introduction</h1></center> -->
-<table align="center" width="850px"><tbody><tr><td>
-<p>
-We introduce VISOR, a new dataset of  pixel annotations and a benchmark suite for segmenting hands and active objects in egocentric video.
-VISOR annotates videos from EPIC-KITCHENS, which comes with a new set of challenges not encountered in current video segmentation datasets. Specifically, we need to ensure both short- and long-term consistency of pixel-level annotations as objects undergo transformative interactions, e.g. an onion is peeled, diced and cooked - where we aim to obtain accurate pixel-level annotations of the peel, onion pieces, chopping board, knife, pan, as well as the acting hands.
-VISOR introduces an annotation pipeline, AI-empowered in parts, for scalability and quality.
-In total, we publicly release 271K manual semantic masks of 255 object classes, 7M interpolated dense masks, 67K hand-object relations, covering 36 hours of 179 untrimmed videos.
-Along with the annotations, we introduce three challenges in video object segmentation, interaction understanding and long-term reasoning.
-</p>
-</td></tr></tbody></table>
-
-<br><br><hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
-
-<center><h1>VISOR Annotations and Challenges</h1>
-
-
-<table align="center" width="850px"><tbody><tr><td>
-<p style='text-align:center'>
-Our VISOR challenge introduces a large set of new annotations
-on the EPIC-KITCHENS dataset as well as a set of new
-challenges based on these annotations.
-</p></td></tr></table>
-
-
-<table>
-<tr>
-<td align='center'><b>Sparse Annotations</b></td>
-<td></td>
-<td align='center'><b>Dense annotations</b></td>
-</tr>
-<tr><td><img src='images/sparse.jpg' width=300></td><td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td><img src='images/dense.jpg' width=300></td></tr>
-<tr>
-<td align='center'>
-271K masks covering<br/>36 hours of untrimmed video
-</td><td></td>
-<td align='center'>
-14.9M high quality<br/>
-automatic interpolations
-</td></tr>
-</table>
-<br/>
-
-<br/><br/>
-
-<table align="center" width="850px"><tbody><tr><td>
-<p style='text-align:center'>
-We introduce three new benchmarks that use these annotations, with baselines
-and metrics.
-</p></td></tr></table>
-<br/>
-
-<table>
-<tr>
-<td align='center'><b>Video Object Segmentation</b></td>
-<td></td>
-<td align='center'><b>Hand Object Segmentation</b></td>
-<td></td>
-<td align='center'><b>Where Did This Come From?</b></td>
-</tr> 
-<tr>
-<td align='center'><img src='images/c1.png' height=120></td>
-<td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
-<td align='center'><img src='images/c2.png' height=120></td>
-<td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
-<td align='center'><img src='images/c3.png' height=120></td>
-</tr><tr>
-<td align='center'>
-<b>Goal:</b> Track segments through video
-and occlusion
-</td>
-<td></td>
-<td align='center'>
-<b>Goal:</b> Identify contact with 67K
-in-hand object masks
-</td>
-<td></td>
-<td align='center'>
-<b>Goal:</b>Name and point to where things
-came from with 222 test cases
-</td>
-</tr>
-</table>
-<br/><br/>
-
-<table align="center" width="850px"><tbody><tr><td>
-<p style='text-align:center'>
-Video data is best viewed as a video. These annotations
-can be seen in the below trailer:
-</p>
-</td></tr></tbody></table>
-
-<iframe width=800 height=500 src="https://www.youtube.com/embed/jnKQwsWsdxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> 
-
-
-</center>
-
-
-<br><br><hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
-    
-
-<center><h1>Base Dataset and Annotations</h1></center>
-<table align="center" width="850px"><tbody><tr><td>
-<p>
-<a href='http://epic-kitchens.github.io'>EPIC-KITCHENS-100</a>
-has been collected in 45 different kitchens, across 4 countries, focusing on
-long-term object interactions. Each participant captured all kitchen-based
-object interactions for at least 3 consecutive days. Footage shows the
-continuous recording of interactions throughout storage, food prep, cooking and
-serving.  Current annotations label the start and end action segments of all
-interactions, e.g. pick-up egg, put-down egg, pick-up egg, crack egg, mix eggs,
-pour egg mixture, stir eggs, serve eggs. In total, 90K action segments are
-labelled in the train/val/test splits of the EPIC-KITCHENS-100 dataset.
-Details of the dataset are available in the
-<a href='https://arxiv.org/abs/1804.02748'>first (ECCVC2018)</a> and
-<a href='https://arxiv.org/abs/2006.13256'>second (ArXiv)</a>
-papers and can be seen in the below video:
-</p>
-
-<center>
-<!-- <h3>Explore the dataset with a video</h3> -->
-<iframe width=800 height=500 src="https://www.youtube.com/embed/LygrI_MuI-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> 
-<!-- <a href='media/q1zoom_compat.mp4'><img src='media/q1zoom_compat.mp4.jpg' width=675 style='border:2px solid black;'></a> --> 
-<br/><br/>
-
-<!-- 
-<h2>Explore the dataset interactively</h2>
-Mouseover and see some of what people are doing in EPIC-KITCHENS!
-As you move your mouse over the image, we'll show an image from
-the EPIC-KITCHENS dataset. You can select a particular subset
-too. 
-<br/><br/>
-<script>
-var colorActive = '#aaf'; var colorInactive = '#ddd';
-</script>
+<!-- Hands in action -->
+  <div class="container">
+    <div class="row">
+     <div class="col-lg-12 text-center">
+        <h4 class="section-heading text-uppercase">What are Hands Doing?</h4>
+        <p>
+        Mouseover an image and you can see what hands are up to in EPIC-KITCHENS. We'll show you a
+        hand that's at your mouse cursor.
+        </p>
+    </div>
+    </div>
+    <div class="row">
+     <div class="col-lg-12 text-center">
 <div style='align:center;display:inline' id='dselectors'></div><br/><br/>
 <canvas id='visualizer' width=675 height=375 style='border:2px solid black;'></canvas><br/>
-<script>
-var gridBinShow = new Array(); var gridHandSets = new Array(); var gridHandSetNames = new Array(); </script>
-<script src='locdata.js'></script>
-<script src='locationDriver.js'></script>
--->
-
-</center>
-</td></tr></tbody></table>
-
-
-<br><br><hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
-
-
-<center><h1>Annotation Interface</h1></center>
-<table align="center" width="850px"><tbody><tr><td>
-</td></tr></tbody></table>
-
-<table align="center" width="850px"><tbody><tr><td>
-<p>
-This effort has been powered by the 
-<a href='http://aidemos.cs.toronto.edu/annotation-suite/'>Toronto annotation suite</a>.
-Here, we show a user using the system to annotate a scene with multiple objects
-involved in the interaction.
-Note the use of AI-guided refinement techniques that greatly speed up the
-process (e.g. <a href="https://arxiv.org/abs/1903.06874">CVPR 2019 paper</a>).
-</p>
-<center>
-<!-- <video src='media/Epic-Interface-Video2.mp4' width=800 controls></video> -->
-<iframe width=800 height=500 src="https://www.youtube.com/embed/-RTeEE8Nhhc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> 
-<!-- <iframe width=800 height=500 src="https://www.youtube.com/embed/b3IqxeozEXE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
-<br/><br/>(a more general demo is on <a href='https://www.youtube.com/watch?v=b3IqxeozEXE'>YouTube</a>)
-</center>
-</td></tr></tbody></table>
-
-
-<br><br><hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
-
-
-<center><h2>Acknowledgments</h2></center>
-<table align="center" width="850px"><tbody><tr><td>
-<p>
-We gratefully acknowledge the following colleagues for valuable support of our
-project: Michael Wray for revising the classes for EPIC-KITCHENS-100 with new
-open-vocab words; Seung Wook Kim and Marko Boben for technical support to
-TORAS; Srdjan Delic for additional quality checks; several members of the
-Machine Learning and Computer Vision (MaVi) group at Bristol for quality
-checking: Toby Perrett, Michael Wray, Dena Bazazian, Adriano Fragomeni, Kevin
-Flanagan, Daniel Whettam, Alexandros Stergiou, Jacob Chalk and Zhifan Zhu.
-</p>
-
-<p>
-Segmentation annotations were funded by charitable unrestricted donation from
-Procter and Gamble as well as charitable unrestricted donation from DeepMind.
-</p>
-
-<p>
-Research at the University of Bristol is supported by UKRI Engineering and
-Physical Sciences Research Council (EPSRC) Doctoral Training Program (DTP),
-EPSRC Fellowship UMPIRE (EP/T004991/1) and EPSRC Program Grant Visual
-AI (EP/T028572/1).
-</p>
-
-<p>
-Research at the University of Michigan is based upon work
-supported by the National Science Foundation under Grant No. 2006619.
-</p>
-
-<p>
-This webpage template was originally made by <a href="https://richzhang.github.io/colorization/">Richard Zhang</a>
-</p>
-
-
-</td></tr></tbody></table>
-
-<script>
-function doSetups(){ 
-    setupHandMove()
-    setTimeout('updateSample()',200);
-}
+<script type='text/javascript'>
+var colorActive = '#aaf'; var colorInactive = '#ddd';
+var gridBinShow = new Array(); var gridHandSets = new Array(); var gridHandSetNames = new Array(); 
+function doSetups(){ setupHandMove() }
 window.onload = doSetups;
 </script>
+<script src='locdata.js'></script>
+<script src='locationDriver.js'></script>
+  </div>
 
-</body></html>
+
+
+</section>
+
+<section id="downloads">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section-heading text-uppercase">Download</h2>
+        <h3 class="section-subheading text-muted">Dataset will be publicly available for research purposes</h3>
+       
+        <p style='font-size:150%'>
+        Data will be released August 1, 2022.<br/><br/>
+        </p>
+
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-md-12">
+        <h4 class="section-subheading">Disclaimer </h4>
+      <p>The underlying data that power VISOR, EPIC-KITCHENS-55 and EPIC-KITCHENS-100, were collected as a tool for research in computer vision. The dataset may have unintended biases (including those of a societal, gender or racial nature).</p>
+          </div>
+      </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="section-subheading">Copyright <img alt="Creative Commons License" style="border-width:1px;float:left;margin-right:15px;margin-bottom:0px;" src="https://i.creativecommons.org/l/by-nc/3.0/88x31.png"/></h4>
+        <p>
+        The VISOR dataset is copyright by us and published under the <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International</a> License. This means that  you must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. You may not use the material for commercial purposes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="team" class="bg-light">
+  <div class="container">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">The Team</h2>
+      </div>
+
+      <div class="row">
+      <div class="col-md-12 text-center">
+         <p>VISOR is the result of a collaboration of the Universities of <a href='http://www.bristol.ac.uk/'>Bristol</a>, <a href='https://https://umich.edu/'>Michigan</a>, and <a href='https://www.utoronto.ca/'>Toronto</a>.</p>
+      </div>
+      </div>
+
+
+
+
+    <div class="row justify-content-center">
+
+      <div class="col-md-2">
+        <div class="team-member">
+            <img class="mx-auto rounded-circle" src="static/img/profile/ad.png" />
+            <h4>Ahmad Dar Khalil*</h4></a>
+          <h6 class="text-muted">University of Bristol</h6>
+        </div>
+      </div> <!--Ahmad-->
+
+      <div class="col-md-2">
+        <div class="team-member">
+            <img class="mx-auto rounded-circle" src="static/img/profile/ds.jpg" />
+            <h4>Dandan Shan*</h4></a>
+          <h6 class="text-muted">University of Michigan</h6>
+        </div>
+      </div> <!--Dandan-->
+
+      <div class="col-md-2">
+        <div class="team-member">
+            <img class="mx-auto rounded-circle" src="static/img/profile/Bin.jpg" />
+            <h4>Bin Zhu*</h4></a>
+          <h6 class="text-muted">University of Bristol</h6>
+        </div>
+      </div> <!--Bin-->
+
+
+      <div class="col-md-2">
+        <div class="team-member">
+            <img class="mx-auto rounded-circle" src="static/img/profile/jm2-min.jpg" />
+            <h4>Jian Ma*</h4></a>
+          <h6 class="text-muted">University of Bristol</h6>
+        </div>
+      </div> <!--Jian-->
+
+      <div class="col-md-2">
+        <div class="team-member">
+            <img class="mx-auto rounded-circle" src="static/img/profile/ak.jpg" />
+            <h4>Amlan Kar</h4></a>
+          <h6 class="text-muted">University of Toronto</h6>
+        </div>
+      </div> <!--Amlan-->
+
+      <div class="col-md-2">
+        <div class="team-member">
+            <img class="mx-auto rounded-circle" src="static/img/profile/rh.png" />
+            <h4>Richard Higgins</h4></a>
+          <h6 class="text-muted">University of Michigan</h6>
+        </div>
+      </div> <!--Richard-->
+
+
+      <div class="col-md-2">
+        <div class="team-member">
+            <img class="mx-auto rounded-circle" src="static/img/profile/sf.jpg" />
+            <h4>Sanja Fidler</h4></a>
+          <h6 class="text-muted">University of Toronto</h6>
+        </div>
+      </div> <!--Sanja-->
+
+      <div class="col-md-2">
+        <div class="team-member">
+            <img class="mx-auto rounded-circle" src="static/img/profile/df.jpg" />
+            <h4>David Fouhey</h4></a>
+          <h6 class="text-muted">University of Michigan</h6>
+        </div>
+      </div> <!--David-->
+
+      <div class="col-md-2">
+        <div class="team-member">
+            <img class="mx-auto rounded-circle" src="static/img/profile/dd-min.jpg" />
+            <h4>Dima Damen</h4></a>
+          <h6 class="text-muted">University of Bristol</h6>
+        </div>
+      </div> <!--Dima-->
+    </div>
+
+
+ <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="section-heading text-uppercase">Research Funding</h2>
+          <div class="text-muted">
+            <p> The work on VISOR was supported by the following:</p>
+              <ul class="text-muted">
+                <li>Segmentation annotations were funded by charitable unrestricted donation from Procter and Gamble as well as charitable unrestricted donation from DeepMind.
+                <li>Research at the University of Bristol is supported by UKRI Engineering and Physical Sciences Research Council (EPSRC) Doctoral Training Program (DTP), EPSRC Fellowship UMPIRE (EP/T004991/1) and EPSRC Program Grant Visual AI (EP/T028572/1). 
+                <li>The project acknowledges the use of the ESPRC funded Tier 2 facility, JADE and University of Bristol's Blue Crystal 4 facility.
+                <li>Research at the University of Michigan is based upon work supported by the National Science Foundation under Grant No. 2006619.
+                <li>Research at the University of Toronto is in part sponsored by NSERC. S.F. also acknowledges support through the Canada CIFAR AI Chair program.
+              </ul>
+          </div>
+        </div>
+      </div>
+
+
+</div>
+</section>
+
+    <!-- Footer -->
+    <footer style="background-color:#373435ff;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img alt="Creative Commons License" style="border-width:1px;float:left;margin-right:15px;margin-bottom:0px;" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"/>
+            <span class="copyright" style="color:#eee;">Copyright &copy; EPIC KITCHENS 2020</span>
+          </div>
+          <div class="col-md-8">
+            <p style="color:#eee;">For general enquiries, email us at
+              <a href="mailto:uob-epic-kitchens2018@bristol.ac.uk"> uob-epic-kitchens@bristol.ac.uk</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="static/js/agency.min.js"></script>
+
+  </body>
+</html>
