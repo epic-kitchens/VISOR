@@ -152,14 +152,16 @@
 <div class="container">
    <div class="row align-items-center">
      <div class="col-lg-12 text-center">
-        <h4 class="section-heading text-uppercase">Watch a Segment</h4>
+       <h4 class="section-heading text-uppercase"><span style='color:red;'>Interactive! </span>Watch a Segment.</h4>
         <p>
         You can click through and see the annotations for a full sequence. We show the image on the left, the annotations on the right, and the legend for the annotation below.
         </p>
+      <br>
+      <span id='framecount' style='border:0.1em solid black; padding:0.1em 0.5em 0.1em 0.5em; font-size:2em;'>Frame 1 / 402</span><br><br>
      </div>
   </div>
    <div class="row align-items-center">
-        <div class="col-lg-1 col-md-1 mb-1"> <input type="button" style="cursor:pointer;border:1px solid white;padding:0px 20px 0px 20px;" onclick="adjustBN(-1)" value="<<"> </div>
+        <div class="col-lg-1 col-md-1 mb-1 text-center"><input type="button" style="cursor:pointer;border:0.1em solid black;padding:0em 0.5em 0.1em 0.5em;font-size:2em;" onclick="adjustBN(-1)" value="<<"></div>
         <div class="col-lg-5 col-md-5 mb-4">
 	        <center>Image</center>
             <img id="widgetimage" src="https://epicwidget.s3.amazonaws.com/P22_107/P22_107_frame_0000000213.jpg"	class="img-fluid mb-4" alt="">
@@ -168,7 +170,7 @@
             <center>Annotation</center>
             <img id="widgetanno" src="https://epicwidget.s3.amazonaws.com/P22_107/segmentations/P22_107_frame_0000000213.png" class="img-fluid mb-4" alt="">
         </div>
-        <div class="col-lg-1 col-md-1 mb-1"> <input type="button" style="cursor:pointer;border:1px solid white;padding:0px 20px 0px 20px;" onclick="adjustBN(1)" value=">>"> </div>
+        <div class="col-lg-1 col-md-1 mb-1 text-center"><input type="button" style="cursor:pointer;border:0.1em solid black;padding:0em 0.5em 0.1em 0.5em;font-size:2em;" onclick="adjustBN(1)" value=">>"></div>
     </div>
 
     <div class="row justify-content-center">
@@ -183,7 +185,7 @@
   <div class="container">
     <div class="row">
      <div class="col-lg-12 text-center">
-        <h4 class="section-heading text-uppercase">See Our Dense Annotations</h4>
+       <h4 class="section-heading text-uppercase"><span style='color:red;'>Interactive! </span>See Our Dense Annotations.</h4>
         <p>
         Part of VISOR is a new collection of 14.9M new masks that are interpolated between our sparse annotation.<br/>
         <b>Click</b> on
@@ -194,7 +196,7 @@
 
     <script>
     function updateVid(i){
-        document.getElementById('vid'+i).innerHTML = "<video width='100%' controls autoplay=true loop><source src='video/cut_"+i+".webm' type='video/webm'></video>";
+      document.getElementById('vid'+i).innerHTML = "<video width='100%' controls autoplay=true loop><source src='video/cut_"+i+".webm' type='video/webm'><source src='video/cut_"+i+".mp4' type='video/mp4'></video>";
     }
     </script>
 
@@ -232,7 +234,7 @@
   <div class="container">
     <div class="row">
      <div class="col-lg-12 text-center">
-        <h4 class="section-heading text-uppercase">What are Hands Doing?</h4>
+       <h4 class="section-heading text-uppercase"><span style='color:red;'>Interactive! </span>What are Hands Doing?</h4>
         <p>
         Mouseover an image and you can see what hands are up to in EPIC-KITCHENS. We'll show you a
         hand that's at your mouse cursor.
@@ -243,6 +245,7 @@
      <div class="col-lg-12 text-center">
 <div style='align:center;display:inline' id='dselectors'></div><br/><br/>
 <canvas id='visualizer' width=675 height=375 style='border:2px solid black;'></canvas><br/>
+<img style="width:5em; margin-top:-2em;" src="static/img/finger.png" /> Move your mouse here! <br>
 <script type='text/javascript'>
 var colorActive = '#aaf'; var colorInactive = '#ddd';
 var gridBinShow = new Array(); var gridHandSets = new Array(); var gridHandSetNames = new Array(); 
@@ -297,7 +300,7 @@ window.onload = doSetups;
 
       <div class="row">
       <div class="col-md-12 text-center">
-         <p>VISOR is the result of a collaboration of the Universities of <a href='http://www.bristol.ac.uk/'>Bristol</a>, <a href='https://https://umich.edu/'>Michigan</a>, and <a href='https://www.utoronto.ca/'>Toronto</a>.</p>
+         <p>VISOR is the result of a collaboration of the Universities of <a href='http://www.bristol.ac.uk/'>Bristol</a>, <a href='https://umich.edu/'>Michigan</a>, and <a href='https://www.utoronto.ca/'>Toronto</a>.</p>
       </div>
       </div>
 

@@ -8,6 +8,7 @@ function renderBN(){
     document.getElementById("widgetimage").src = base+imgList[currentBNInd];
     document.getElementById("widgetanno").src = segbase+(imgList[currentBNInd].replace("jpg", "png"));
     document.getElementById("legend").innerHTML = all_spans[currentBNInd];
+    document.getElementById("framecount").innerHTML = 'Frame ' + (currentBNInd+1) + ' / 402';
 }
 
 function adjustBN(di){

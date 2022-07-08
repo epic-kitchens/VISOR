@@ -77,7 +77,7 @@ function setupHandMove(){
     document.getElementById('visualizer').onmousemove = canvasMouseMove;
     var s = "";
     for(var i=0;i<gridHandSets.length;i++){
-        s += "<span style='margin:1px;padding:1px;background-color:#ddd;border:3px solid black;display:inline;'";
+        s += "<span style='margin:1px;padding:5px;background-color:#ddd;border:3px solid black;display:inline;'";
         s += " id='datasetButton"+gridHandSets[i]+"'";
         s += " onClick=\"setSet('"+gridHandSets[i]+"');\""; 
         s += ">"+gridHandSetNames[i]+"</span> &nbsp; ";
