@@ -29,11 +29,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#trailer">Trailer</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#trailer">Trailer</a>
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#stats">Explore</a>
@@ -56,6 +56,23 @@
         </div>
       </div>
     </header>
+      
+      <section id="trailer">
+  <div class="container">
+    <div class="row text-center">
+    <div class="col text-center">
+        <h2 class="section-heading text-uppercase">Watch the Trailer</h2>
+        <h3 class="section-subheading text-muted">The full data is coming by August 1, 2022, but in the meantime, please watch our data!</h3>
+    </div>
+  </div>
+  <div class="Container">
+    <div class="row align-items-center">
+      <div class="col text-center">
+        <iframe width=800 height=500 src="https://youtu.be/yGodQAbYW_E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> 
+     </div>
+     </div>
+      </div></div>
+</section>
 
     <!-- About -->
 <section class="bg-light" id="about">
@@ -117,22 +134,7 @@
 </section>
 
 
-<section id="trailer">
-  <div class="container">
-    <div class="row text-center">
-    <div class="col text-center">
-        <h2 class="section-heading text-uppercase">Watch the Trailer</h2>
-        <h3 class="section-subheading text-muted">The full data is coming by August 1, 2022, but in the meantime, please watch our data!</h3>
-    </div>
-  </div>
-  <div class="Container">
-    <div class="row align-items-center">
-      <div class="col text-center">
-        <iframe width=800 height=500 src="https://www.youtube.com/embed/jnKQwsWsdxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> 
-     </div>
-     </div>
-    </div>
-</section>
+
 
 <!-- Stats -->
 <section id="stats" class="bg-light">
@@ -268,8 +270,14 @@ window.onload = doSetups;
         <h3 class="section-subheading text-muted">Dataset will be publicly available for research purposes</h3>
        
         <p style='font-size:150%'>
-        Data will be released August 1, 2022.<br/><br/>
+        <a href="https://doi.org/10.5523/bris.2v6cgv1x04ol22qp9rm9x2j6a7">VISOR is now available for download</a>. Data are available at the University of Bristol data repository, data.bris, at <a href="https://doi.org/10.5523/bris.2v6cgv1x04ol22qp9rm9x2j6a7">https://doi.org/10.5523/bris.2v6cgv1x04ol22qp9rm9x2j6a7</a><br/><br/>
         </p>
+          
+         <p style='font-size:150%'>
+        Code to visualise segmentations is now available from <a href="https://github.com/epic-kitchens/VISOR-VIS">VISOR-VIS</a> github repo
+        </p> 
+          
+        <p>We will be releasing additional code for frame extraction from videos and Video Object Segmentation model and inference code shortly</p>
 
       </div>
     </div>
